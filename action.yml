@@ -21,7 +21,6 @@ inputs:
   working-directory:
     description: 'Run commands in this directory'
     required: false
-    default: ''
 
 runs:
   using: 'node16'

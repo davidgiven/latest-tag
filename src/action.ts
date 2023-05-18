@@ -29,7 +29,8 @@ function forceBranch(ref: string) {
 async function run() {
   try {
   	const cwd = core.getInput('working-directory')
-	if (cwd != '') {
+	core.info(`Debug: cwd=${cwd}`)
+	if (cwd) {
 	  core.info(`Changing directory to '${cwd}'`)
 	  process.chdir(cwd)
 	}
