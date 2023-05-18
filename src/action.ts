@@ -1,6 +1,7 @@
 import * as core from '@actions/core'
 import * as util from 'util'
 import * as child_process from 'child_process'
+import * as process from 'process'
 
 const { GITHUB_ACTOR } = process.env
 
@@ -27,6 +28,12 @@ function forceBranch(ref: string) {
 
 async function run() {
   try {
+  	const cwd = core.getInput('working-directory')
+	if (cwd != '') {
+	  core.info(`Changing directory to '${cwd}'`)
+	  process.chdir(cwd)
+	}
+
     core.info('Setting up git user...')
     await exec(`git config user.name "${GITHUB_ACTOR}"`)
     await exec(

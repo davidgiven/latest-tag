@@ -18,6 +18,10 @@ inputs:
     description: 'Force-update a branch rather than a tag'
     required: false
     default: 'false'
+  working-directory:
+    description: 'Run commands in this directory'
+    required: false
+    default: ''
 
 runs:
   using: 'node16'
