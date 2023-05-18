@@ -35,7 +35,7 @@ async function run() {
 	  process.chdir(cwd)
 	}
 
-    core.info('Setting up git user...')
+    core.info('Setting up git user z...')
     await exec(`git config user.name "${GITHUB_ACTOR}"`)
     await exec(
       `git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"`
